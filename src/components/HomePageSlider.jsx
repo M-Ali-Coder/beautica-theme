@@ -3,7 +3,7 @@ import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 import Slide1 from "../assets/images/home-slide-1.jpg";
 import Slide2 from "../assets/images/home-slide-2.jpg";
-import Slide3 from "../assets/images/home-slide-3.jpg";
+import { Link } from "react-router-dom";
 
 const HomePageSlider = () => {
   const params = {
@@ -12,21 +12,73 @@ const HomePageSlider = () => {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 250000,
+      delay: 3000,
       disableOnInteraction: false,
     },
   };
   return (
-    <div className="home-page-sliser-wrapper container">
+    <div className="home-page-sliser-wrapper container font">
       <Swiper {...params}>
-        <div className="slider-item">
-          <img src={Slide1} alt="" />
+        {/* Hide content from 992px to 0  */}
+        <div className="slider-item carousel">
+          <img src={Slide1} alt="slide-1" />
+          <div className="carousel-content">
+            <h1>
+              Beautifully Bare <br /> Collection
+            </h1>
+            <div className="carousel-description">
+              <p>It’s the Lightweight, Natural-Looking Collection You Love</p>
+            </div>
+            <div className="show-now-btn">
+              <Link to="/shop">shop now</Link>
+            </div>
+          </div>
+
+          {/* Show content from 0 to 991px  */}
+
+          <div className="mobile-carousel-content">
+            <h1>Beautifully Bare Collection</h1>
+            <div className="carousel-description">
+              <p>It’s the Lightweight, Natural-Looking Collection You Love</p>
+            </div>
+            <div className="show-now-btn">
+              <Link to="/shop">shop now</Link>
+            </div>
+          </div>
         </div>
-        <div className="slider-item">
-          <img src={Slide2} alt="" />
-        </div>
-        <div className="slider-item">
-          <img src={Slide3} alt="" />
+
+        {/* Seconnd slider */}
+
+        {/* Hide content from 992px to 0  */}
+        <div className="slider-item secondCarousel">
+          <img src={Slide2} alt="slider-2" />
+          <div className="secondCarousel-content">
+            <h1>Le Fragrances</h1>
+            <div className="secondCarousel-description">
+              <p>
+                Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia
+                andos tincidunt risus delous an consequat lorem quisquemos sodales.
+              </p>
+            </div>
+            <div className="show-now-btn">
+              <Link to="/shop">shop now</Link>
+            </div>
+          </div>
+
+          {/* Show content from 0 to 991px  */}
+
+          <div className="mobile-secondCarousel-content">
+            <h1>Le Fragrances</h1>
+            <div className="secondCarousel-description">
+              <p>
+                Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia
+                andos tincidunt risus delous an consequat lorem quisquemos sodales.
+              </p>
+            </div>
+            <div className="show-now-btn">
+              <Link to="/shop">shop now</Link>
+            </div>
+          </div>
         </div>
       </Swiper>
     </div>

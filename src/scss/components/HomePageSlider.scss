@@ -5,6 +5,163 @@
       width: 100%;
       height: 100%;
     }
+
+    &.carousel {
+      position: relative;
+
+      .carousel-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 600px;
+        height: 300px;
+        text-align: center;
+        font-size: 25px;
+
+        h1 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .carousel-description {
+          margin-top: 10px;
+          font-size: 25px;
+          p {
+            font-size: 0.5em;
+          }
+        }
+
+        .show-now-btn {
+          position: absolute;
+          bottom: -20px;
+
+          a {
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .mobile-carousel-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+          text-transform: uppercase;
+          font-size: 20px;
+        }
+
+        .carousel-description {
+          margin-top: 10px;
+          font-size: 25px;
+          p {
+            font-size: 0.5em;
+          }
+        }
+
+        .show-now-btn {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+
+          a {
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    &.secondCarousel {
+      position: relative;
+
+      .secondCarousel-content {
+        padding: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 600px;
+        height: 300px;
+        text-align: center;
+        font-size: 25px;
+
+        h1 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .secondCarousel-description {
+          margin-top: 10px;
+          font-size: 25px;
+          p {
+            font-size: 0.5em;
+          }
+        }
+
+        .show-now-btn {
+          position: absolute;
+          bottom: -20px;
+
+          a {
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .mobile-secondCarousel-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+          text-transform: uppercase;
+          font-size: 20px;
+        }
+
+        .carousel-description {
+          margin-top: 10px;
+          font-size: 25px;
+          p {
+            font-size: 0.5em;
+          }
+        }
+
+        .show-now-btn {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+
+          a {
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -34,14 +191,51 @@
   color: #000;
 }
 
+@media screen and(min-width: 768px) {
+  .mobile-carousel-content,
+  .mobile-secondCarousel-content {
+    display: none !important;
+  }
+}
+
 @media (max-width: $breakpoint-lg) {
   .swiper-button-next,
   .swiper-button-prev {
-    width: 30px !important;
-    height: 30px !important;
+    display: none !important;
+  }
 
-    &::after {
-      font-size: 14px !important;
+  .home-page-sliser-wrapper {
+    .carousel-content,
+    .secondCarousel-content {
+      display: none !important;
+    }
+  }
+}
+
+@media screen and(max-width: 991px) {
+  .mobile-carousel-content,
+  .mobile-secondCarousel-content {
+    display: block !important;
+
+    .show-now-btn {
+      a {
+        width: 120px !important;
+        font-size: 10px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .home-page-sliser-wrapper {
+    .carousel-content,
+    .secondCarousel-content {
+      display: none !important;
+    }
+    .secondCarousel-description {
+      p {
+        font-size: 0.8em;
+      }
     }
   }
 }
