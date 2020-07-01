@@ -20,7 +20,7 @@ class MainHeader extends React.Component {
   render() {
     const { toggleProductCart, toggleLoginForm } = this.state;
     return (
-      <div>
+      <>
         <div className="main-header">
           <div className="container">
             <div className="main-header-content">
@@ -147,7 +147,7 @@ class MainHeader extends React.Component {
         </div>
 
         <MobileMainHeader />
-      </div>
+      </>
     );
   }
 }

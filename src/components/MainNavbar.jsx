@@ -122,6 +122,14 @@ class MainNavbar extends React.Component {
             </ul>
           </div>
         </div>
+        <div className="limited-time font">
+          <div className="container">
+            <p className="font-bold">
+              LIMITED-TIME OFFERS: MID-SEASON SALE UP TO 70% OFF ON SELECTED ITEMS.{" "}
+              <Link to="/show">SHOP NOW</Link>
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

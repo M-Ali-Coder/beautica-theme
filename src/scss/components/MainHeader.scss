@@ -314,9 +314,30 @@
   }
 }
 
+.limited-time {
+  background-color: #e7040f;
+  padding: 10px 0;
+  text-align: center;
+  display: none;
+
+  p {
+    color: #fff;
+    font-size: 14px;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .mobile-main-header {
     display: none !important;
+  }
+
+  .limited-time {
+    display: block;
   }
 }
 

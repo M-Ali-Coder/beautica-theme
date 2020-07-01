@@ -12,7 +12,7 @@ class MobileMainHeader extends React.Component {
 
     this.state = {
       toggleProductCart: false,
-      showSideNav: true,
+      showSideNav: false,
     };
   }
   render() {

@@ -217,3 +217,9 @@
     }
   }
 }
+
+@media (min-width: $breakpoint-lg) {
+  .sideNav {
+    display: none;
+  }
+}
