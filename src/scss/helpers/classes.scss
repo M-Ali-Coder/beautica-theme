@@ -1,0 +1,21 @@
+/*
+  ======================= APP FONT =======================
+*/
+
+.font {
+  font-family: "Poppins", sans-serif;
+}
+
+/*
+  ======================= CONTAINER =======================
+*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: $breakpoint-xl) {
+  .container {
+    width: 95%;
+  }
+}

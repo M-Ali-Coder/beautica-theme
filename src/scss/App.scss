@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// App font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap");
+
+body {
+  height: 5000px;
+  font-family: Arimo, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// Helpers
+@import "./helpers/variables.scss";
+@import "./helpers/loop.scss";
+@import "./helpers/classes.scss";
+
+// Components
+@import "./components/UpperNav.scss";

@@ -1,0 +1,35 @@
+.upper-nav {
+  background-color: $dark;
+  color: #fff;
+
+  .upper-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+
+    p {
+      margin: 0;
+    }
+    .left-side {
+      i {
+        cursor: pointer;
+        font-size: 15px;
+        display: none;
+      }
+    }
+    .right-side {
+      display: flex;
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: $breakpoint-lg) {
+  .upper-nav {
+    display: none;
+  }
+}
