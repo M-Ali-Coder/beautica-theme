@@ -9,6 +9,7 @@
 /*
   ======================= CONTAINER =======================
 */
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -18,4 +19,12 @@
   .container {
     width: 95%;
   }
+}
+
+/*
+  ======================= INLINE-CLASSES =======================
+*/
+
+.font-bold {
+  font-weight: bold;
 }
