@@ -1,5 +1,5 @@
 // ============================= Mixins =============================
-@mixin customBtn($bg, $color, $fSize, $padding, $transBg, $transColor, $width) {
+@mixin customBtn($bg, $color, $fSize, $padding, $transBg, $transColor, $width: true) {
   display: block;
   background-color: $bg;
   color: $color;
