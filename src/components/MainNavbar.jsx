@@ -51,7 +51,7 @@ class MainNavbar extends React.Component {
 
               <li className="beauty-accessories-menu-element">
                 <Link to="/beauty-accessories">
-                  beauty accessoriessssss
+                  beauty accessories
                   <FaChevronDown />
                 </Link>
                 <ul className="beauty-accessories-menu-content">

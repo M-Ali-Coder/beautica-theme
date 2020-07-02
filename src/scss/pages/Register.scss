@@ -1,0 +1,50 @@
+.user-registeration-page {
+  margin: 40px auto;
+
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 700;
+        font-family: Arimo, Arial, Helvetica, sans-serif;
+        letter-spacing: 0.02em;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+      input {
+        padding: 10px 0;
+        border-radius: 3px;
+        border: 1px solid #cbcbcb;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  button {
+    // customBtn($bg, $color, $fSize, $padding, $transBg, $transColor, $width: true)
+    @include customBtn(#000, #fff, 12px, 15px 20px, $darkRed, #fff);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+}
+
+@media screen and(max-width: $breakpoint-sm) {
+  .user-registeration-page {
+    .content-wrapper {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}

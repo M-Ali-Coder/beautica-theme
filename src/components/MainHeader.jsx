@@ -33,7 +33,7 @@ class MainHeader extends React.Component {
                 />
               </div>
               <div className="logo">
-                <Link to="#">
+                <Link to="/">
                   <img src={AppLogo} alt="logo" />
                 </Link>
               </div>

@@ -8,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap");
 
 body {
-  height: 10000px;
+  // height: 10000px;
   font-family: Arimo, sans-serif;
 }
 
@@ -39,4 +39,6 @@ ul {
 @import "./components/HomeCustomBanner.scss";
 @import "./components/FollowUs.scss";
 @import "./components/AppFooter.scss";
-@import "./pages/ShopPage.scss";
+@import "./pages/CategoryPage.scss";
+@import "./pages/LookBook.scss";
+@import "./pages/Register.scss";
