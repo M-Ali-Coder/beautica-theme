@@ -191,7 +191,7 @@
   }
 }
 
-@media screen and(min-width: 768px) {
+@media screen and(min-width: $breakpoint-md) {
   .mobile-carousel-content,
   .mobile-secondCarousel-content {
     display: none !important;
@@ -208,11 +208,10 @@
     .carousel-content,
     .secondCarousel-content {
       display: none !important;
+      border: 1px solid red;
     }
   }
-}
 
-@media screen and(max-width: 991px) {
   .mobile-carousel-content,
   .mobile-secondCarousel-content {
     display: block !important;

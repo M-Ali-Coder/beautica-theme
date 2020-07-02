@@ -122,8 +122,10 @@
   }
 
   .add-to-cart {
+    width: 100%;
+
     button {
-      @include customBtn(#000, #fff, 12px, 10px, $darkRed, #fff, 100%);
+      @include customBtn(#000, #fff, 14px, 12px 0, $darkRed, #fff, 100%);
       font-weight: bold;
       text-transform: uppercase;
       opacity: 0;

@@ -13,7 +13,7 @@ class HomePageSlider extends React.Component {
         prevEl: ".swiper-button-prev",
       },
       autoplay: {
-        delay: 3000,
+        delay: 3000000,
         disableOnInteraction: false,
       },
       effect: "fade",
@@ -51,25 +51,9 @@ class HomePageSlider extends React.Component {
 
           {/* Seconnd slider */}
 
-          {/* Hide content from 992px to 0  */}
           <div className="slider-item secondCarousel">
             <img src={Slide2} alt="slider-2" />
             <div className="secondCarousel-content">
-              <h1>Le Fragrances</h1>
-              <div className="secondCarousel-description">
-                <p>
-                  Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia
-                  andos tincidunt risus delous an consequat lorem quisquemos sodales.
-                </p>
-              </div>
-              <div className="show-now-btn">
-                <Link to="/shop">shop now</Link>
-              </div>
-            </div>
-
-            {/* Show content from 0 to 991px  */}
-
-            <div className="mobile-secondCarousel-content">
               <h1>Le Fragrances</h1>
               <div className="secondCarousel-description">
                 <p>
