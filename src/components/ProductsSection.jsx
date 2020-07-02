@@ -17,7 +17,7 @@ class ProductsSection extends Component {
   }
 
   render() {
-    const { sectionTitle, sectionDesc } = this.props;
+    const { sectionTitle, sectionDesc, autoPlay } = this.props;
     const { justArrive } = this.state;
 
     // Swiper
@@ -26,10 +26,10 @@ class ProductsSection extends Component {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      // autoplay: {
-      //   delay: 3000,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+        delay: autoPlay,
+        disableOnInteraction: false,
+      },
       slidesPerView: 3,
       spaceBetween: 30,
       loop: true,
@@ -56,21 +56,23 @@ class ProductsSection extends Component {
     return (
       <>
         <section className="container products-section-wrapper">
-          <div className="section-title">
-            <h2>
-              <span>{sectionTitle}</span>
-            </h2>
-            <p>{sectionDesc}</p>
-          </div>
+          <div className="products-section-content">
+            <div className="section-title">
+              <h2>
+                <span>{sectionTitle}</span>
+              </h2>
+              <p>{sectionDesc}</p>
+            </div>
 
-          <div className="just-arrived-products-slider">
-            <Swiper {...params}>
-              {justArrive.map(({ id, ...otherProps }) => (
-                <div className="swiper-slider-item" key={id}>
-                  <SingleProduct {...otherProps} />
-                </div>
-              ))}
-            </Swiper>
+            <div className="just-arrived-products-slider">
+              <Swiper {...params}>
+                {justArrive.map(({ id, ...otherProps }) => (
+                  <div className="swiper-slider-item" key={id}>
+                    <SingleProduct {...otherProps} />
+                  </div>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </section>
       </>

@@ -2,6 +2,7 @@ import React from "react";
 import HomePageSlider from "../HomePageSlider";
 import FluidBanner from "../FluidBanner";
 import ProductsSection from "../ProductsSection";
+import OurBlogSection from "../OurBlogSection";
 
 const HomePAge = () => {
   return (
@@ -11,7 +12,15 @@ const HomePAge = () => {
       <ProductsSection
         sectionTitle="just arrived"
         sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
+        autoPlay={2500}
       />
+
+      <ProductsSection
+        sectionTitle="editors' picks"
+        sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
+        autoPlay={4000}
+      />
+      <OurBlogSection />
     </div>
   );
 };

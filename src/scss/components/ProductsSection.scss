@@ -1,21 +1,23 @@
 .products-section-wrapper {
   margin: 60px auto;
 
-  .section-title {
-    text-align: center;
-    text-transform: uppercase;
+  .products-section-content {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ebebeb;
 
-    p {
-      font-size: 12px;
-      margin-top: 10px;
-      text-transform: capitalize;
+    .section-title {
+      text-align: center;
+      text-transform: uppercase;
+
+      p {
+        font-size: 12px;
+        margin-top: 10px;
+        text-transform: capitalize;
+      }
     }
-  }
 
-  .just-arrived-products-slider {
-    margin-top: 30px;
-
-    .swiper-slider-item {
+    .just-arrived-products-slider {
+      margin-top: 30px;
     }
   }
 }
