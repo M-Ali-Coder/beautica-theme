@@ -4,6 +4,7 @@ import FluidBanner from "../FluidBanner";
 import ProductsSection from "../ProductsSection";
 import OurBlogSection from "../OurBlogSection";
 import HomeCustomBanner from "../HomeCustomBanner";
+import FollowUs from "../FollowUs";
 
 const HomePAge = () => {
   return (
@@ -23,7 +24,15 @@ const HomePAge = () => {
         sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
         autoPlay={4000}
       />
+
+      <ProductsSection
+        sectionTitle="features products"
+        sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
+        autoPlay={4000}
+      />
       <OurBlogSection />
+
+      <FollowUs />
     </div>
   );
 };
