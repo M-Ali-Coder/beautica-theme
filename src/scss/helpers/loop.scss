@@ -1,62 +1,66 @@
+// ===================================================================
 // ============================= Margin =============================
+// ===================================================================
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .mr-all-#{$i} {
     margin: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .mr-top-#{$i} {
     margin-top: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .mr-right-#{$i} {
     margin-right: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .mr-bottom-#{$i} {
     margin-bottom: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .mr-left-#{$i} {
     margin-left: $i + px;
   }
 }
 
+// ===================================================================
 // ============================= Padding =============================
+// ===================================================================
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .pd-all-#{$i} {
     padding: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .pd-top-#{$i} {
     padding-top: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .pd-right-#{$i} {
     padding-right: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .pd-bottom-#{$i} {
     padding-bottom: $i + px;
   }
 }
 
-@for $i from 1 to 100 {
+@for $i from 1 through 100 {
   .pd-left-#{$i} {
     padding-left: $i + px;
   }
