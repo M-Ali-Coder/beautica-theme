@@ -47,8 +47,8 @@ class ProductsSection extends Component {
           spaceBetween: 20,
         },
         320: {
-          slidesPerView: 2,
-          spaceBetween: 10,
+          slidesPerView: 1,
+          spaceBetween: 0,
         },
       },
     };

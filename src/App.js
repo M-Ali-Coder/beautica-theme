@@ -10,10 +10,12 @@ import LookBook from "./components/pages/LookBook";
 import AppFooter from "./components/AppFooter";
 import Register from "./components/pages/Register";
 import CartPage from "./components/pages/CartPage";
+import FixedScrollNav from "./components/FixedScrollNav";
 
 function App() {
   return (
     <div className="App">
+      <FixedScrollNav />
       <UpperNav />
       <MainHeader />
       <MainNavbar />
@@ -31,7 +33,9 @@ function App() {
         <Route path="/register" render={() => <Register />} />
         <Route path="/cart" render={() => <CartPage />} />
       </Switch>
+
       <AppFooter />
+      <FixedScrollNav />
     </div>
   );
 }
