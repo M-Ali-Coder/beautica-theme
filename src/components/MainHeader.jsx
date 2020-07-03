@@ -126,7 +126,7 @@ class MainHeader extends React.Component {
 
                         <div className="horizantal-line" />
 
-                        <Link to="checkout" id="checkout-now">
+                        <Link to="/checkout" id="checkout-now">
                           check out now
                         </Link>
                         <Link to="/cart" id="view-your-cart">

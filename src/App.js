@@ -9,6 +9,7 @@ import CategoryPage from "./components/pages/CategoryPage";
 import LookBook from "./components/pages/LookBook";
 import AppFooter from "./components/AppFooter";
 import Register from "./components/pages/Register";
+import CartPage from "./components/pages/CartPage";
 
 function App() {
   return (
@@ -20,14 +21,15 @@ function App() {
       {/* React router dom routing */}
       <Switch>
         <Route exact path="/" render={() => <HomePage />} />
-        <Route exact path="/trend-now" render={() => <CategoryPage />} />
-        <Route exact path="/makeup" render={() => <CategoryPage />} />
-        <Route exact path="/nail" render={() => <CategoryPage />} />
-        <Route exact path="/beauty-accessories" render={() => <CategoryPage />} />
-        <Route exact path="/body-art" render={() => <CategoryPage />} />
-        <Route exact path="/makeup-tools" render={() => <CategoryPage />} />
-        <Route exact path="/lookbook" render={() => <LookBook />} />
-        <Route exact path="/register" render={() => <Register />} />
+        <Route path="/trend-now" render={() => <CategoryPage />} />
+        <Route path="/makeup" render={() => <CategoryPage />} />
+        <Route path="/nail" render={() => <CategoryPage />} />
+        <Route path="/beauty-accessories" render={() => <CategoryPage />} />
+        <Route path="/body-art" render={() => <CategoryPage />} />
+        <Route path="/makeup-tools" render={() => <CategoryPage />} />
+        <Route path="/lookbook" render={() => <LookBook />} />
+        <Route path="/register" render={() => <Register />} />
+        <Route path="/cart" render={() => <CartPage />} />
       </Switch>
       <AppFooter />
     </div>
