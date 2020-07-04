@@ -17,6 +17,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 100.0,
     isNew: "new",
+    routerLink: "product-1",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 140.0,
     isNew: "new",
+    routerLink: "product-2",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 200.0,
     isNew: "new",
+    routerLink: "product-3",
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 99.3,
     isNew: "new",
+    routerLink: "product-4",
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 220.0,
     isNew: "new",
+    routerLink: "product-5",
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 120.0,
     isNew: "new",
+    routerLink: "product-6",
   },
   {
     id: 7,
@@ -65,6 +71,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 180.9,
     isNew: "new",
+    routerLink: "product-7",
   },
   {
     id: 8,
@@ -73,6 +80,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 100.9,
     isNew: "new",
+    routerLink: "product-8",
   },
   {
     id: 9,
@@ -81,6 +89,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 120.3,
     isNew: "new",
+    routerLink: "product-9",
   },
   {
     id: 10,
@@ -89,6 +98,7 @@ const JUST_ARRIVED = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 320.3,
     isNew: "new",
+    routerLink: "product-10",
   },
 ];
 

@@ -7,10 +7,12 @@ import MainNavbar from "./components/MainNavbar";
 import HomePage from "./components/pages/HomePage";
 import CategoryPage from "./components/pages/CategoryPage";
 import LookBook from "./components/pages/LookBook";
-import AppFooter from "./components/AppFooter";
+// import AppFooter from "./components/AppFooter";
 import Register from "./components/pages/Register";
 import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
+import Product from "./components/pages/Product";
+import JUST_ARRIVED from "./data/justArrived";
 
 function App() {
   return (
@@ -32,9 +34,13 @@ function App() {
         <Route path="/lookbook" render={() => <LookBook />} />
         <Route path="/register" render={() => <Register />} />
         <Route path="/cart" render={() => <CartPage />} />
+        <Route
+          path="/products/:product"
+          render={(otherProps) => <Product {...otherProps} products={JUST_ARRIVED} />}
+        />
       </Switch>
 
-      <AppFooter />
+      {/* <AppFooter /> */}
       <FixedScrollNav />
     </div>
   );
