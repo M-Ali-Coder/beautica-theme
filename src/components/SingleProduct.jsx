@@ -1,17 +1,21 @@
 import React from "react";
 import { MdStar, MdStarHalf } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const SingleProduct = ({ img, productName, price, description, isNew }) => {
   return (
     <div className="single-product-wrapper font">
-      <div>
+      <Link to="#">
         <div className="img-wrapper">
           <img src={img} alt="" id="singleProductImg" />
           <div className="quick-view">quick view</div>
           <div className="new-offer">new</div>
+          <div className="add-to-wish-list">
+            <FaHeart />
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className="product-details">
         <Link to="#" className="brandName">

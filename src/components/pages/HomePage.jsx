@@ -14,7 +14,7 @@ const HomePAge = () => {
       <ProductsSection
         sectionTitle="just arrived"
         sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
-        autoPlay={2500}
+        autoPlay={25000000}
       />
 
       <HomeCustomBanner />
