@@ -7,6 +7,9 @@
 // App font
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+// Helpers
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 body {
   // height: 10000px;
   font-family: Arimo, sans-serif;
@@ -44,3 +47,4 @@ ul {
 @import "./pages/Register.scss";
 @import "./pages/CartPage.scss";
 @import "./components/FixedScrollNav.scss";
+@import "./pages/ProductView.scss";

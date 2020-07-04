@@ -11,7 +11,7 @@ import LookBook from "./components/pages/LookBook";
 import Register from "./components/pages/Register";
 import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
-import Product from "./components/pages/Product";
+import ProductView from "./components/pages/ProductView";
 import JUST_ARRIVED from "./data/justArrived";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         <Route path="/cart" render={() => <CartPage />} />
         <Route
           path="/products/:product"
-          render={(otherProps) => <Product {...otherProps} products={JUST_ARRIVED} />}
+          render={(otherProps) => <ProductView {...otherProps} products={JUST_ARRIVED} />}
         />
       </Switch>
 
