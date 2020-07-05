@@ -1,11 +1,9 @@
 // ============================= Mixins =============================
-@mixin customBtn($bg, $color, $fSize, $padding, $transBg, $transColor, $width: true) {
-  display: block;
+@mixin customBtn($bg, $color, $fSize, $padding, $transBg, $transColor) {
   background-color: $bg;
   color: $color;
   padding: $padding;
   font-size: $fSize;
-  width: $width;
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
   border: none;

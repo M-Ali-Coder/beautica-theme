@@ -49,7 +49,8 @@
           }
 
           .read-more-about-blog {
-            @include customBtn(#000, #fff, 15px, 10px 20px, $darkRed, #fff, 150px);
+            @include customBtn(#000, #fff, 15px, 10px 20px, $darkRed, #fff);
+            width: 150px;
             display: block;
             text-transform: uppercase;
             font-weight: bold;

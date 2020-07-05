@@ -207,7 +207,6 @@
 
         .add-to-cart {
           @include customBtn(#000, #fff, 14px, 15px 40px, $darkRed, #fff);
-          border-radius: 3px;
           font-weight: bold;
           cursor: pointer;
           margin-right: 30px;
@@ -215,7 +214,6 @@
 
         .add-to-wishlist {
           @include customBtn(#fff, #000, 14px, 15px 25px, #000, #fff);
-          border-radius: 3px;
           font-weight: bold;
           cursor: pointer;
           border: 1px solid #000;

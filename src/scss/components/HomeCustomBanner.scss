@@ -14,7 +14,8 @@
       }
 
       .shop-now {
-        @include customBtn(#000, #fff, 16px, 10px 20px, $darkRed, #fff, 140px);
+        @include customBtn(#000, #fff, 16px, 10px 20px, $darkRed, #fff);
+        width: 140px;
         text-align: center;
         text-transform: uppercase;
         font-weight: bold;

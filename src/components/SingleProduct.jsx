@@ -9,7 +9,6 @@ const SingleProduct = ({ img, productName, price, description, isNew, routerLink
       <Link to={`/products/${routerLink}`}>
         <div className="img-wrapper">
           <img src={img} alt="" id="singleProductImg" />
-          <div className="quick-view">quick view</div>
           <div className="new-offer">{isNew}</div>
           <div className="add-to-wish-list">
             <FaHeart />

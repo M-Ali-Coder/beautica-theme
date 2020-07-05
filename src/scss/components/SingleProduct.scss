@@ -81,7 +81,7 @@
 
     .add-to-wish-list {
       position: absolute;
-      top: -40px;
+      top: -100%;
       right: 0;
       transition: top 0.4s ease-in-out;
 
@@ -147,7 +147,8 @@
     width: 100%;
 
     button {
-      @include customBtn(#000, #fff, 14px, 12px 0, $darkRed, #fff, 100%);
+      @include customBtn(#000, #fff, 14px, 12px 0, $darkRed, #fff);
+      width: 100%;
       font-weight: bold;
       text-transform: uppercase;
       opacity: 0;

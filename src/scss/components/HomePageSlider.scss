@@ -42,7 +42,7 @@
           bottom: -20px;
 
           a {
-            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff);
             text-transform: uppercase;
             font-weight: bold;
           }
@@ -76,7 +76,7 @@
           justify-content: center;
 
           a {
-            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff);
             text-transform: uppercase;
             font-weight: bold;
           }
@@ -121,7 +121,7 @@
           bottom: -20px;
 
           a {
-            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff);
             text-transform: uppercase;
             font-weight: bold;
           }
@@ -155,7 +155,7 @@
           justify-content: center;
 
           a {
-            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff, 150px);
+            @include customBtn($dark, #fff, 14px, 10px 20px, $darkRed, #fff);
             text-transform: uppercase;
             font-weight: bold;
           }
