@@ -7,7 +7,7 @@ import MainNavbar from "./components/MainNavbar";
 import HomePage from "./components/pages/HomePage";
 import CategoryPage from "./components/pages/CategoryPage";
 import LookBook from "./components/pages/LookBook";
-// import AppFooter from "./components/AppFooter";
+import AppFooter from "./components/AppFooter";
 import Register from "./components/pages/Register";
 import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
@@ -40,7 +40,7 @@ function App() {
         />
       </Switch>
 
-      {/* <AppFooter /> */}
+      <AppFooter />
       <FixedScrollNav />
     </div>
   );

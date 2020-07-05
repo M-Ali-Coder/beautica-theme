@@ -66,26 +66,6 @@ const Product = (props) => {
 
           <div className="column">
             <h5 className="column-title">
-              <span>shop by price</span>
-            </h5>
-            <ul className="filter-shop-by-price font">
-              <li className="filter-shop-item">
-                <Link to="#">$0.00 - $200.00</Link>
-              </li>
-              <li className="filter-shop-item">
-                <Link to="#">$200.00 - $400.00</Link>
-              </li>
-              <li className="filter-shop-item">
-                <Link to="#">$400.00 - $600.00</Link>
-              </li>
-              <li className="filter-shop-item">
-                <Link to="#">$600.00 - $800.00</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="column">
-            <h5 className="column-title">
               <span>brands</span>
             </h5>
             <ul className="filter-shop-by-brands font">
@@ -117,24 +97,6 @@ const Product = (props) => {
                 <Link to="#">Burberry</Link>
               </li>
             </ul>
-          </div>
-
-          <div className="column">
-            <h5 className="column-title">
-              <span>custom cms block</span>
-            </h5>
-            <div className="custom-cms-block">
-              <p>
-                Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own
-                content here: text, html, images, media... whatever you like.
-              </p>
-              <br />
-
-              <p>
-                Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own
-                content here: text, html, images, media... whatever you like.
-              </p>
-            </div>
           </div>
         </div>
 
