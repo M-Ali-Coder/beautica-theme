@@ -40,11 +40,8 @@ class MainHeader extends React.Component {
               <div className="user-actions">
                 <div className="hi-customer">
                   <div>Hi Customer</div>
-                  <span
-                    className="font-bold"
-                    onClick={() => this.setState({ toggleLoginForm: !toggleLoginForm })}
-                  >
-                    Sign in
+                  <span onClick={() => this.setState({ toggleLoginForm: !toggleLoginForm })}>
+                    Login
                   </span>
 
                   {toggleLoginForm && (
@@ -86,7 +83,7 @@ class MainHeader extends React.Component {
 
                   <span className="or-sperator">or</span>
                   <Link to="/register" className="font-bold">
-                    Sign Up
+                    Register
                   </Link>
                 </div>
                 <div className="vertical-line"></div>
