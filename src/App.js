@@ -13,6 +13,7 @@ import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
 import ProductView from "./components/pages/ProductView";
 import JUST_ARRIVED from "./data/justArrived";
+import GoToTopBtn from "./components/GoToTopBtn";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
 
       <AppFooter />
       <FixedScrollNav />
+      <GoToTopBtn />
     </div>
   );
 }

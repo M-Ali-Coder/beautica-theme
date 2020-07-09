@@ -8,13 +8,13 @@ import FollowUs from "../FollowUs";
 
 const HomePAge = () => {
   return (
-    <div>
+    <>
       <HomePageSlider />
       <FluidBanner />
       <ProductsSection
         sectionTitle="just arrived"
         sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
-        autoPlay={25000000}
+        autoPlay={2500}
       />
 
       <HomeCustomBanner />
@@ -28,12 +28,12 @@ const HomePAge = () => {
       <ProductsSection
         sectionTitle="features products"
         sectionDesc="Magnis de darturien eros laciniados de cosmopolis dinterdum"
-        autoPlay={4000}
+        autoPlay={3500}
       />
       <OurBlogSection />
 
       <FollowUs />
-    </div>
+    </>
   );
 };
 

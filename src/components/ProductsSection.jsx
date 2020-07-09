@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-// Utils
 import JUST_ARRIVED from "../data/justArrived";
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
-
-// Components
 import SingleProduct from "./SingleProduct";
 
 class ProductsSection extends Component {
@@ -75,6 +72,7 @@ class ProductsSection extends Component {
             </div>
           </div>
         </section>
+        {/* <ProductModal /> */}
       </>
     );
   }
