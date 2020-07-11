@@ -10,7 +10,6 @@ class GoToTopBtn extends React.Component {
   }
 
   goToUp() {
-    console.log("Go to top");
     window.scrollTo({
       top: 0,
       left: 0,

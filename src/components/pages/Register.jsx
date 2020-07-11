@@ -1,29 +1,6 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa";
-import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
 
 class Register extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
-  unSubscribeFromAuht = null;
-
-  componentDidMount() {
-    // Track current user login state
-    this.unSubscribeFromAuht = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-    });
-  }
-
-  componentWillUnmount() {
-    this.unSubscribeFromAuht();
-  }
-
   render() {
     return (
       <div className="container user-registeration-page" autoComplete="off">
@@ -66,10 +43,6 @@ class Register extends React.Component {
 
               <div className="btn-group">
                 <button>sign in</button>
-                <button className="google-btn" onClick={signInWithGoogle}>
-                  Sign in with Google
-                  <FaGoogle />
-                </button>
               </div>
             </form>
           </div>

@@ -14,6 +14,7 @@ import FixedScrollNav from "./components/FixedScrollNav";
 import ProductView from "./components/pages/ProductView";
 import JUST_ARRIVED from "./data/justArrived";
 import GoToTopBtn from "./components/GoToTopBtn";
+import WishListPage from "./components/pages/WishListPage";
 
 function App() {
   return (
@@ -32,9 +33,11 @@ function App() {
         <Route path="/beauty-accessories" render={() => <CategoryPage />} />
         <Route path="/body-art" render={() => <CategoryPage />} />
         <Route path="/makeup-tools" render={() => <CategoryPage />} />
+        <Route path="/fragance" render={() => <CategoryPage />} />
         <Route path="/lookbook" render={() => <LookBook />} />
         <Route path="/register" render={() => <Register />} />
         <Route path="/cart" render={() => <CartPage />} />
+        <Route path="/wishlist" render={() => <WishListPage />} />
         <Route
           path="/products/:product"
           render={(otherProps) => <ProductView {...otherProps} products={JUST_ARRIVED} />}
