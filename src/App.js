@@ -24,7 +24,6 @@ function App() {
       <MainHeader />
       <MainNavbar />
 
-      {/* React router dom routing */}
       <Switch>
         <Route exact path="/" render={() => <HomePage />} />
         <Route path="/trend-now" render={() => <CategoryPage />} />
