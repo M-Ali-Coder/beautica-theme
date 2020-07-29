@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./scss/App.scss";
 import { Switch, Route } from "react-router-dom";
 import UpperNav from "./components/UpperNav";
@@ -16,38 +16,65 @@ import JUST_ARRIVED from "./data/justArrived";
 import GoToTopBtn from "./components/GoToTopBtn";
 import WishListPage from "./components/pages/WishListPage";
 
-function App() {
-  return (
-    <div className="App">
-      <FixedScrollNav />
-      <UpperNav />
-      <MainHeader />
-      <MainNavbar />
+import { auth } from "./firebase/firebase.utils";
 
-      <Switch>
-        <Route exact path="/" render={() => <HomePage />} />
-        <Route path="/trend-now" render={() => <CategoryPage />} />
-        <Route path="/makeup" render={() => <CategoryPage />} />
-        <Route path="/nail" render={() => <CategoryPage />} />
-        <Route path="/beauty-accessories" render={() => <CategoryPage />} />
-        <Route path="/body-art" render={() => <CategoryPage />} />
-        <Route path="/makeup-tools" render={() => <CategoryPage />} />
-        <Route path="/fragance" render={() => <CategoryPage />} />
-        <Route path="/lookbook" render={() => <LookBook />} />
-        <Route path="/register" render={() => <Register />} />
-        <Route path="/cart" render={() => <CartPage />} />
-        <Route path="/wishlist" render={() => <WishListPage />} />
-        <Route
-          path="/products/:product"
-          render={(otherProps) => <ProductView {...otherProps} products={JUST_ARRIVED} />}
-        />
-      </Switch>
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-      <AppFooter />
-      <FixedScrollNav />
-      <GoToTopBtn />
-    </div>
-  );
+    this.state = {
+      currentUser: null,
+    };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    // Track user login state
+    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+      this.setState({
+        currentUser: user,
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <FixedScrollNav />
+        <UpperNav />
+        <MainHeader />
+        <MainNavbar />
+
+        <Switch>
+          <Route exact path="/" render={() => <HomePage />} />
+          <Route path="/trend-now" render={() => <CategoryPage />} />
+          <Route path="/makeup" render={() => <CategoryPage />} />
+          <Route path="/nail" render={() => <CategoryPage />} />
+          <Route path="/beauty-accessories" render={() => <CategoryPage />} />
+          <Route path="/body-art" render={() => <CategoryPage />} />
+          <Route path="/makeup-tools" render={() => <CategoryPage />} />
+          <Route path="/fragance" render={() => <CategoryPage />} />
+          <Route path="/lookbook" render={() => <LookBook />} />
+          <Route path="/register" render={() => <Register />} />
+          <Route path="/cart" render={() => <CartPage />} />
+          <Route path="/wishlist" render={() => <WishListPage />} />
+          <Route
+            path="/products/:product"
+            render={(otherProps) => <ProductView {...otherProps} products={JUST_ARRIVED} />}
+          />
+        </Switch>
+
+        <AppFooter />
+        <FixedScrollNav />
+        <GoToTopBtn />
+      </div>
+    );
+  }
 }
 
 export default App;
