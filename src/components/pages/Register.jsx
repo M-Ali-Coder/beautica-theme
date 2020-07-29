@@ -5,9 +5,9 @@ class Register extends React.Component {
   render() {
     return (
       <div className="container user-registeration-page" autoComplete="off">
-        <h1>new account</h1>
         <div className="content-wrapper">
           <div className="row">
+            <h3 className="mr-bottom-20">Create Account</h3>
             <div className="input-group">
               <label htmlFor="fname">First Name</label>
               <input type="text" name="fname" id="fname" required />
@@ -33,14 +33,15 @@ class Register extends React.Component {
           </div>
 
           <div className="sign-in-form">
+            <h3 className="mr-bottom-20">Sign in</h3>
             <form>
               <div className="input-group">
-                <label htmlFor="fname">First Name</label>
-                <input type="text" name="fname" id="fname" required />
+                <label htmlFor="username">Username</label>
+                <input type="text" name="username" id="username" required />
               </div>
               <div className="input-group">
-                <label htmlFor="lname">Last Name</label>
-                <input type="text" name="lname" id="lname" required />
+                <label htmlFor="singinEmail">Email</label>
+                <input type="email" name="email" id="singinEmail" required />
               </div>
 
               <div className="btn-group">

@@ -6,6 +6,7 @@ import DummyCartProduct from "../assets/images/products/product-1.webp";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MobileMainHeader from "./MobileMainHeader";
+import { auth } from "../firebase/firebase.utils";
 
 class MainHeader extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class MainHeader extends React.Component {
   }
 
   render() {
-    const { toggleProductCart, toggleLoginForm } = this.state;
+    const { toggleProductCart } = this.state;
+    const { currentUser } = this.props;
+
     return (
       <>
         <div className="main-header">
@@ -40,47 +43,15 @@ class MainHeader extends React.Component {
               <div className="user-actions">
                 <div className="hi-customer">
                   <div>Hi Customer</div>
-                  <span onClick={() => this.setState({ toggleLoginForm: !toggleLoginForm })}>
-                    Login
-                  </span>
-
-                  {toggleLoginForm && (
-                    <form action="" method="POST" id="loginFrom" autoComplete="off">
-                      <h5>login</h5>
-                      <div className="form-group">
-                        <div className="email-input">
-                          <input
-                            type="email"
-                            name="email"
-                            id="useremail"
-                            placeholder="Email address"
-                          />
-                        </div>
-
-                        <div className="password-input">
-                          <input
-                            type="password"
-                            name="password"
-                            id="userpwd"
-                            placeholder="Password"
-                          />
-                        </div>
-
-                        <button type="submit" id="login-button">
-                          login
-                        </button>
-
-                        <Link to="#" id="forget-password">
-                          forget your password
-                        </Link>
-
-                        <Link to="/register" id="create-new-account">
-                          create new account
-                        </Link>
-                      </div>
-                    </form>
+                  {currentUser ? (
+                    <span onClick={() => auth.signOut()}>
+                      <b>Logout</b>
+                    </span>
+                  ) : (
+                    <Link to="/register">
+                      <b>Login</b>
+                    </Link>
                   )}
-
                   <span className="or-sperator">or</span>
                   <Link to="/register" className="font-bold">
                     Register
