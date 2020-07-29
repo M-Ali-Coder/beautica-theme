@@ -31,14 +31,24 @@ class App extends Component {
 
   componentDidMount() {
     // Track user login state
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
-      createUserProfileDocument(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      createUserProfileDocument(userAuth);
 
-      this.setState({
-        currentUser: user,
-      });
-
-      console.log(user);
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapshot) => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data(),
+            },
+          });
+        });
+      } else {
+        this.setState({
+          currentUser: userAuth,
+        });
+      }
     });
   }
 

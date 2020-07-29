@@ -46,6 +46,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.error("Error when creating a new user profile", error.msg);
     }
   }
+
+  return userRef;
 };
 
 // Sing in with Google
