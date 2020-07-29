@@ -1,5 +1,6 @@
 import React from "react";
-import { signinWithGoogle, auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import Signin from "../Signin";
 
 class Register extends React.Component {
   constructor(props) {
@@ -105,24 +106,7 @@ class Register extends React.Component {
             </form>
           </div>
 
-          <div className="sign-in-form">
-            <h3 className="mr-bottom-20">Sign in</h3>
-            <form>
-              <div className="input-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" id="username" required />
-              </div>
-              <div className="input-group">
-                <label htmlFor="singinEmail">Email</label>
-                <input type="email" name="email" id="singinEmail" required />
-              </div>
-
-              <div className="btn-group">
-                <button>sign in</button>
-                <button onClick={signinWithGoogle}>sign in with Google</button>
-              </div>
-            </form>
-          </div>
+          <Signin />
         </div>
       </div>
     );
