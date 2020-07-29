@@ -16,7 +16,7 @@ import JUST_ARRIVED from "./data/justArrived";
 import GoToTopBtn from "./components/GoToTopBtn";
 import WishListPage from "./components/pages/WishListPage";
 
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends Component {
   constructor(props) {
@@ -31,10 +31,14 @@ class App extends Component {
 
   componentDidMount() {
     // Track user login state
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+      createUserProfileDocument(user);
+
       this.setState({
         currentUser: user,
       });
+
+      console.log(user);
     });
   }
 
