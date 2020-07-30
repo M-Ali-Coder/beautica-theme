@@ -7,6 +7,7 @@ import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MobileMainHeader from "./MobileMainHeader";
 import { auth } from "../firebase/firebase.utils";
+import { connect } from "react-redux";
 
 class MainHeader extends React.Component {
   constructor(props) {
@@ -120,4 +121,8 @@ class MainHeader extends React.Component {
   }
 }
 
-export default MainHeader;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(MainHeader);

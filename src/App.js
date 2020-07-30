@@ -17,6 +17,8 @@ import GoToTopBtn from "./components/GoToTopBtn";
 import WishListPage from "./components/pages/WishListPage";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +32,8 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
+
     // Track user login state
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       createUserProfileDocument(userAuth);
@@ -37,7 +41,7 @@ class App extends Component {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot((snapshot) => {
-          this.setState({
+          setCurrentUser({
             currentUser: {
               id: snapshot.id,
               ...snapshot.data(),
@@ -45,9 +49,7 @@ class App extends Component {
           });
         });
       } else {
-        this.setState({
-          currentUser: userAuth,
-        });
+        setCurrentUser(userAuth);
       }
     });
   }
@@ -57,13 +59,11 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.state;
-
     return (
       <div className="App">
         <FixedScrollNav />
         <UpperNav />
-        <MainHeader currentUser={currentUser} />
+        <MainHeader />
         <MainNavbar />
 
         <Switch>
@@ -93,4 +93,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(null, mapDispatchToProps)(App);
