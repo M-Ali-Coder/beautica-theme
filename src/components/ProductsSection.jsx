@@ -63,9 +63,9 @@ class ProductsSection extends Component {
 
             <div className="just-arrived-products-slider">
               <Swiper {...params}>
-                {justArrive.map(({ id, ...otherProps }) => (
-                  <div className="swiper-slider-item" key={id}>
-                    <SingleProduct {...otherProps} />
+                {justArrive.map((item) => (
+                  <div className="swiper-slider-item" key={item.id}>
+                    <SingleProduct item={item} />
                   </div>
                 ))}
               </Swiper>

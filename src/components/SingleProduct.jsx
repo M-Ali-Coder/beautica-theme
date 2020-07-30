@@ -2,7 +2,12 @@ import React from "react";
 import { MdStar, MdStarHalf } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-const SingleProduct = ({ img, productName, price, description, isNew, routerLink }) => {
+import { addItem } from "../redux/cart/cart.actions";
+import { connect } from "react-redux";
+
+const SingleProduct = ({ item, addItem }) => {
+  const { img, productName, price, description, isNew, routerLink } = item;
+
   return (
     <div className="single-product-wrapper show-one-row-view  font">
       <div className="content">
@@ -31,9 +36,7 @@ const SingleProduct = ({ img, productName, price, description, isNew, routerLink
             <MdStarHalf />
           </div>
           <div className="add-to-cart">
-            <form>
-              <button className="single-product-cart">add to cart</button>
-            </form>
+            <button onClick={() => addItem(item)}>add to cart</button>
           </div>
         </div>
       </div>
@@ -41,4 +44,8 @@ const SingleProduct = ({ img, productName, price, description, isNew, routerLink
   );
 };
 
-export default SingleProduct;
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(null, mapDispatchToProps)(SingleProduct);
