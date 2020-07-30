@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./scss/App.scss";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import UpperNav from "./components/UpperNav";
 import MainHeader from "./components/MainHeader";
 import MainNavbar from "./components/MainNavbar";
@@ -21,14 +21,6 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
@@ -59,6 +51,8 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.props;
+
     return (
       <div className="App">
         <FixedScrollNav />
@@ -76,7 +70,10 @@ class App extends Component {
           <Route path="/makeup-tools" render={() => <CategoryPage />} />
           <Route path="/fragance" render={() => <CategoryPage />} />
           <Route path="/lookbook" render={() => <LookBook />} />
-          <Route path="/register" render={() => <Register />} />
+          <Route
+            path="/register"
+            render={() => (currentUser ? <Redirect to="/" /> : <Register />)}
+          />
           <Route path="/cart" render={() => <CartPage />} />
           <Route path="/wishlist" render={() => <WishListPage />} />
           <Route
@@ -93,8 +90,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
