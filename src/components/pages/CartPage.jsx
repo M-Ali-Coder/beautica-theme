@@ -99,8 +99,10 @@ class CartPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  cartItems: selectCartItems(state),
-});
+const mapStateToProps = (state) => {
+  return {
+    cartItems: selectCartItems(state),
+  };
+};
 
 export default connect(mapStateToProps)(CartPage);

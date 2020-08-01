@@ -2,6 +2,8 @@ import React from "react";
 import AppLogo from "../assets/images/logo.webp";
 import { Link } from "react-router-dom";
 import CartLogo from "../assets/svg/shopping-bag.svg";
+import { connect } from "react-redux";
+import { selectCartItemsCount } from "../redux/cart/cart.selectors";
 
 class ToggleScrollNav extends React.Component {
   constructor(props) {
@@ -22,6 +24,8 @@ class ToggleScrollNav extends React.Component {
   }
 
   render() {
+    const { cartItemsCount } = this.props;
+
     return (
       <div id="fixed-scroll-navigation">
         <div className="logo">
@@ -64,7 +68,7 @@ class ToggleScrollNav extends React.Component {
             <img src={CartLogo} alt="shopping-cart-icon" />
 
             <div className="product-quantity">
-              <span>1</span>
+              <span>{cartItemsCount}</span>
             </div>
           </Link>
         </div>
@@ -73,4 +77,8 @@ class ToggleScrollNav extends React.Component {
   }
 }
 
-export default ToggleScrollNav;
+const mapStateToProps = (state) => ({
+  cartItemsCount: selectCartItemsCount(state),
+});
+
+export default connect(mapStateToProps)(ToggleScrollNav);
