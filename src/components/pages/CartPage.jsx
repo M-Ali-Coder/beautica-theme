@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectCartItems, selectCartItemsPrices } from "../../redux/cart/cart.selectors";
 import { createStructuredSelector } from "reselect";
+import CartItem from "../CartItem";
 
 class CartPage extends React.Component {
   render() {
@@ -36,28 +37,8 @@ class CartPage extends React.Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItems.map(({ img, productName, price, quantity }, idx) => (
-                      <tr key={idx}>
-                        <td className="product-preview">
-                          <img src={img} alt="product" />
-                          <div className="product-quick-info">
-                            <span className="product-category">collette</span>
-                            <Link to="#" className="product-name">
-                              {productName}
-                            </Link>
-                          </div>
-                        </td>
-                        <td className="font-bold">price</td>
-                        <td className="font-bold">
-                          <div className="product-quantity">
-                            <button onClick={() => quantity - 1}>-</button>
-                            <div>{quantity}</div>
-                            <button onClick={() => quantity++}>+</button>
-                          </div>
-                        </td>
-                        <td className="font-bold">{quantity * price}</td>
-                        <td className="font-bold remove-item">X</td>
-                      </tr>
+                    {cartItems.map((item, idx) => (
+                      <CartItem key={idx} item={item} />
                     ))}
                   </tbody>
                 </table>
