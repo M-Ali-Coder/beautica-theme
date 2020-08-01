@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { selectCartItems } from "../../redux/cart/cart.selectors";
+import { selectCartItems, selectCartItemsPrices } from "../../redux/cart/cart.selectors";
+import { createStructuredSelector } from "reselect";
 
 class CartPage extends React.Component {
   render() {
-    const { cartItems } = this.props;
+    const { cartItems, cartItemsPrices } = this.props;
 
     return (
       <div className="cart-page-wrapper container">
@@ -67,7 +68,7 @@ class CartPage extends React.Component {
               <ul className="proceed-to-checkout-list">
                 <li>
                   <span>Subtotal:</span>
-                  <span>$396.00</span>
+                  <span>${cartItemsPrices}</span>
                 </li>
                 <li>
                   <span>Shipping:</span>
@@ -87,7 +88,7 @@ class CartPage extends React.Component {
                 </li>
                 <li>
                   <span>Grand total:</span>
-                  <span>$435.60</span>
+                  <span>${cartItemsPrices}</span>
                 </li>
               </ul>
               <button>proceed to checkout</button>
@@ -99,10 +100,9 @@ class CartPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cartItems: selectCartItems(state),
-  };
-};
+const mapStateToProps = createStructuredSelector({
+  cartItems: selectCartItems,
+  cartItemsPrices: selectCartItemsPrices,
+});
 
 export default connect(mapStateToProps)(CartPage);
