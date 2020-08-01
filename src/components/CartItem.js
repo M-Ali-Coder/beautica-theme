@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { removeItem } from "../redux/cart/cart.actions";
+import { removeItemFromCart, addItem, removeItem } from "../redux/cart/cart.actions";
 import { connect } from "react-redux";
 
-const CartItem = ({ item, removeItem }) => {
+const CartItem = ({ item, removeItemFromCart, addItem, removeItem }) => {
   const { img, productName, quantity, price } = item;
 
+  const decressCartItem = () => {
+    if (item.quantity <= 1) {
+      removeItemFromCart(item);
+    }
+    removeItem(item);
+  };
   return (
     <tr>
       <td className="product-preview">
@@ -20,13 +26,13 @@ const CartItem = ({ item, removeItem }) => {
       <td className="font-bold">{price}</td>
       <td className="font-bold">
         <div className="product-quantity">
-          <button>-</button>
+          <button onClick={() => decressCartItem()}>-</button>
           <div>{quantity}</div>
-          <button>+</button>
+          <button onClick={() => addItem(item)}>+</button>
         </div>
       </td>
       <td className="font-bold">{quantity * price}</td>
-      <td className="font-bold remove-item" onClick={() => removeItem(item)}>
+      <td className="font-bold remove-item" onClick={() => removeItemFromCart(item)}>
         <span>X</span>
       </td>
     </tr>
@@ -34,6 +40,8 @@ const CartItem = ({ item, removeItem }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  removeItemFromCart: (item) => dispatch(removeItemFromCart(item)),
+  addItem: (item) => dispatch(addItem(item)),
   removeItem: (item) => dispatch(removeItem(item)),
 });
 
