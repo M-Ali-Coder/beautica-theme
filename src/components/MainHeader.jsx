@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import MobileMainHeader from "./MobileMainHeader";
 import { auth } from "../firebase/firebase.utils";
 import { connect } from "react-redux";
+import { selectCartItemsCount } from "../redux/cart/cart.selectors";
 
 class MainHeader extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class MainHeader extends React.Component {
 
   render() {
     const { toggleProductCart } = this.state;
-    const { currentUser } = this.props;
+    const { currentUser, cartItemsCount } = this.props;
 
     return (
       <>
@@ -68,7 +69,7 @@ class MainHeader extends React.Component {
                     onClick={() => this.setState({ toggleProductCart: !toggleProductCart })}
                   >
                     <img src={ShoppingBag} id="header-shopping-cart" alt="" />
-                    <span className="cart-products">1</span>
+                    <span className="cart-products">{cartItemsCount}</span>
 
                     {toggleProductCart && (
                       <div className="product-in-your-cart">
@@ -121,8 +122,12 @@ class MainHeader extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
-});
+const mapStateToProps = (state) => {
+  console.log("calling this");
+  return {
+    user: state.user.currentUser,
+    cartItemsCount: selectCartItemsCount(state),
+  };
+};
 
 export default connect(mapStateToProps)(MainHeader);
