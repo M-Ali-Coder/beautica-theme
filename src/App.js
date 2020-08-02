@@ -21,6 +21,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { selectSectionsProducts } from "./redux/products/products.selectors";
+import Checkout from "./components/pages/Checkout";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -72,6 +73,7 @@ class App extends Component {
           <Route path="/makeup-tools" render={() => <CategoryPage />} />
           <Route path="/fragance" render={() => <CategoryPage />} />
           <Route path="/lookbook" render={() => <LookBook />} />
+          <Route path="/checkout" component={Checkout} />
           <Route
             path="/register"
             render={() => (currentUser ? <Redirect to="/" /> : <Register />)}
