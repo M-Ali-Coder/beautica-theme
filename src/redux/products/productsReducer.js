@@ -1,15 +1,15 @@
-import item1 from "../assets/images/products/product-1.webp";
-import item2 from "../assets/images/products/product-2.webp";
-import item3 from "../assets/images/products/product-3.webp";
-import item4 from "../assets/images/products/product-9.webp";
-import item5 from "../assets/images/products/product-5.jpg";
-import item6 from "../assets/images/products/product-6.webp";
-import item7 from "../assets/images/products/product-7.jpg";
-import item8 from "../assets/images/products/product-8.webp";
-import item9 from "../assets/images/products/product-9.webp";
-import item10 from "../assets/images/products/product-10.jpg";
+import item1 from "../../assets/images/products/product-1.webp";
+import item2 from "../../assets/images/products/product-2.webp";
+import item3 from "../../assets/images/products/product-3.webp";
+import item4 from "../../assets/images/products/product-9.webp";
+import item5 from "../../assets/images/products/product-5.jpg";
+import item6 from "../../assets/images/products/product-6.webp";
+import item7 from "../../assets/images/products/product-7.jpg";
+import item8 from "../../assets/images/products/product-8.webp";
+import item9 from "../../assets/images/products/product-9.webp";
+import item10 from "../../assets/images/products/product-10.jpg";
 
-const JUST_ARRIVED = [
+const INITIAL_STATE = [
   {
     id: 1,
     img: item1,
@@ -102,4 +102,11 @@ const JUST_ARRIVED = [
   },
 ];
 
-export default JUST_ARRIVED;
+const productsReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export default productsReducer;

@@ -12,13 +12,15 @@ import Register from "./components/pages/Register";
 import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
 import ProductView from "./components/pages/ProductView";
-import JUST_ARRIVED from "./data/justArrived";
 import GoToTopBtn from "./components/GoToTopBtn";
 import WishListPage from "./components/pages/WishListPage";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectSectionsProducts } from "./redux/products/products.selectors";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -51,7 +53,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, products } = this.props;
 
     return (
       <div className="App">
@@ -78,7 +80,7 @@ class App extends Component {
           <Route path="/wishlist" render={() => <WishListPage />} />
           <Route
             path="/products/:product"
-            render={(otherProps) => <ProductView {...otherProps} products={JUST_ARRIVED} />}
+            render={(otherProps) => <ProductView {...otherProps} products={products} />}
           />
         </Switch>
 
@@ -90,8 +92,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ user: { currentUser } }) => ({
-  currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  products: selectSectionsProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({
