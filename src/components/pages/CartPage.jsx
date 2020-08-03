@@ -50,7 +50,7 @@ class CartPage extends React.Component {
               </div>
             </div>
 
-            <div style={{ color: "red", margin: "20px 0" }}>
+            <div style={{ color: "#e7040f", margin: "20px 0" }}>
               "*This payment for development purpose only*"
               <br />
               "*Please, use this following test credit cart number*"

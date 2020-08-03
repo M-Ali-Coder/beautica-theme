@@ -1,4 +1,6 @@
-.app-footer-wrapper {
+import styled from "styled-components";
+
+export const AppFooterContainer = styled.div`
   footer {
     background-color: #0f0f0f;
     padding: 60px 0;
@@ -91,28 +93,26 @@
         }
       }
     }
-  }
-}
-@media screen and(max-width: $breakpoint-lg) {
-  footer {
-    .row {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-  }
-}
-@media screen and(max-width: $breakpoint-sm) {
-  footer {
-    .row {
-      grid-template-columns: 1fr !important;
-      text-align: center;
 
-      .social-media {
-        justify-content: center !important;
+    @media screen and (max-width: 992px) {
+      .row {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
     }
-    .built-by {
-      margin-top: 20px;
-      text-align: center;
+
+    @media screen and (max-width: 576px) {
+      .row {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+
+        .social-media {
+          justify-content: center !important;
+        }
+      }
+      .built-by {
+        margin-top: 20px;
+        text-align: center;
+      }
     }
   }
-}
+`;

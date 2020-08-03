@@ -1,10 +1,11 @@
 import React from "react";
 import { FaFacebookF, FaPinterestP, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AppFooterContainer } from "../styles/app-footer.styles";
 
 const AppFooter = () => {
   return (
-    <div className="app-footer-wrapper font">
+    <AppFooterContainer>
       <footer>
         <div className="container">
           <div className="row">
@@ -141,7 +142,7 @@ const AppFooter = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </AppFooterContainer>
   );
 };
 
