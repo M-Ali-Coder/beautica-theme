@@ -11,8 +11,6 @@ import FollowUsItem7 from "../assets/images/follow-us/follow-us-7.jpg";
 
 // Styles
 
-import { FollowUsContainer, FollowUsImagesContainer } from "../styles/follow-us.styles";
-
 const FollowUs = () => {
   // Swiper
   const params = {
@@ -42,31 +40,31 @@ const FollowUs = () => {
   };
 
   return (
-    <FollowUsContainer>
+    <div className="follow-us">
       <Swiper {...params}>
-        <FollowUsImagesContainer>
+        <div className="follow-us-item">
           <img src={FollowUsItem1} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem2} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem3} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem4} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem5} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem6} alt="item" />
-        </FollowUsImagesContainer>
-        <FollowUsImagesContainer>
+        </div>
+        <div className="follow-us-item">
           <img src={FollowUsItem7} alt="item" />
-        </FollowUsImagesContainer>
+        </div>
       </Swiper>
-    </FollowUsContainer>
+    </div>
   );
 };
 

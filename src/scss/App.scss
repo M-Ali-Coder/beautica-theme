@@ -12,7 +12,7 @@
 
 body {
   // height: 10000px;
-  font-family: "Poppins", sans-serif;
+  font-family: Arimo, sans-serif;
 }
 
 a {
@@ -47,3 +47,5 @@ ul {
 @import "./components/FixedScrollNav.scss";
 @import "./pages/ProductView.scss";
 @import "./components/ProductModal.scss";
+@import "./components/FollowUs.scss";
+@import "./components/AppFooter.scss";
