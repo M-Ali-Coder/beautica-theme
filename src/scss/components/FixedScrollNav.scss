@@ -39,8 +39,29 @@
     }
   }
 
+  .search-products {
+    width: 40%;
+
+    input {
+      width: 100%;
+      border: 1px solid #8080806e;
+      padding: 10px 25px;
+      font-size: 13px;
+      color: #333;
+      outline: 0;
+    }
+  }
+
   .shopping-cart-products-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 30px;
+    }
 
     img {
       display: block;

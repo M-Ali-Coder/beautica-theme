@@ -62,7 +62,7 @@ class MainHeader extends React.Component {
                 </div>
                 <div className="vertical-line"></div>
                 <div className="shopping-cart font">
-                  <Link to="/wishlist" className="wishlist">
+                  <Link to="#" className="wishlist">
                     <FaHeart />
                   </Link>
 

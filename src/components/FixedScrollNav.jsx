@@ -4,11 +4,17 @@ import { Link } from "react-router-dom";
 import CartLogo from "../assets/svg/shopping-bag.svg";
 import { connect } from "react-redux";
 import { selectCartItemsCount } from "../redux/cart/cart.selectors";
+import { FaSearch } from "react-icons/fa";
 
 class ToggleScrollNav extends React.Component {
   constructor(props) {
     super(props);
     this.scrollFunction = this.scrollFunction.bind(this);
+    this.toggleNavState = this.toggleNavState.bind(this);
+
+    this.state = {
+      showNavigation: true,
+    };
   }
 
   // Toggl fixed navbar when scroll
@@ -23,7 +29,12 @@ class ToggleScrollNav extends React.Component {
     window.onscroll = this.scrollFunction;
   }
 
+  toggleNavState() {
+    this.setState({ showNavigation: !this.state.showNavigation });
+  }
+
   render() {
+    const { showNavigation } = this.state;
     const { cartItemsCount } = this.props;
 
     return (
@@ -34,36 +45,48 @@ class ToggleScrollNav extends React.Component {
           </Link>
         </div>
 
-        <div className="app-pages-navigation font">
-          <ul>
-            <li>
-              <Link to="/trend-now">#trend-now</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">makeup</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">nail</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">beauty accessories</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">body art</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">makeup tools</Link>
-            </li>
-            <li>
-              <Link to="/trend-now">fragrance</Link>
-            </li>
-            <li>
-              <Link to="/lookbook">lookbook</Link>
-            </li>
-          </ul>
-        </div>
+        {showNavigation ? (
+          <div className="app-pages-navigation font">
+            <ul>
+              <li>
+                <Link to="/trend-now">#trend-now</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">makeup</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">nail</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">beauty accessories</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">body art</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">makeup tools</Link>
+              </li>
+              <li>
+                <Link to="/trend-now">fragrance</Link>
+              </li>
+              <li>
+                <Link to="/lookbook">lookbook</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="search-products">
+            <input
+              type="text"
+              id="searchForProduct"
+              placeholder="Search for products"
+              autoComplete="off"
+            />
+          </div>
+        )}
 
         <div className="shopping-cart-products-wrapper">
+          <FaSearch onClick={this.toggleNavState} />
           <Link to="/cart">
             <img src={CartLogo} alt="shopping-cart-icon" />
 

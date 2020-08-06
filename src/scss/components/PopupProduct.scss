@@ -1,0 +1,57 @@
+.popup-product-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  z-index: 9999;
+  width: 400px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #8080806e;
+  // position: relative;
+
+  .product-img-wrapper {
+    margin-right: 5px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      display: block;
+      border-right: 1px solid #8080806e;
+    }
+  }
+
+  .popup-content {
+    padding: 10px;
+    font-size: 14px;
+
+    a {
+      color: $dark;
+      margin-bottom: 10px;
+      display: block;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        color: $darkRed;
+      }
+    }
+
+    .product-price {
+      color: $darkRed;
+      font-weight: 600;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      background-color: $dark;
+      color: #fff;
+      padding: 9px;
+      font-size: 16px;
+    }
+  }
+}

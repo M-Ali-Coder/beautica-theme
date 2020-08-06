@@ -13,21 +13,25 @@ import CartPage from "./components/pages/CartPage";
 import FixedScrollNav from "./components/FixedScrollNav";
 import ProductView from "./components/pages/ProductView";
 import GoToTopBtn from "./components/GoToTopBtn";
-import WishListPage from "./components/pages/WishListPage";
+import Checkout from "./components/pages/Checkout";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+  auth,
+  createUserProfileDocument,
+  addCollectionAndDocument,
+} from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { selectSectionsProducts } from "./redux/products/products.selectors";
-import Checkout from "./components/pages/Checkout";
+import PopupProduct from "./components/PopupProduct";
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, products } = this.props;
 
     // Track user login state
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -45,6 +49,7 @@ class App extends Component {
         });
       } else {
         setCurrentUser(userAuth);
+        addCollectionAndDocument("products", products);
       }
     });
   }
@@ -64,31 +69,32 @@ class App extends Component {
         <MainNavbar />
 
         <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
-          <Route path="/trend-now" render={() => <CategoryPage />} />
-          <Route path="/makeup" render={() => <CategoryPage />} />
-          <Route path="/nail" render={() => <CategoryPage />} />
-          <Route path="/beauty-accessories" render={() => <CategoryPage />} />
-          <Route path="/body-art" render={() => <CategoryPage />} />
-          <Route path="/makeup-tools" render={() => <CategoryPage />} />
-          <Route path="/fragance" render={() => <CategoryPage />} />
-          <Route path="/lookbook" render={() => <LookBook />} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/trend-now" component={CategoryPage} />
+          <Route path="/makeup" component={CategoryPage} />
+          <Route path="/nail" component={CategoryPage} />
+          <Route path="/beauty-accessories" component={CategoryPage} />
+          <Route path="/body-art" component={CategoryPage} />
+          <Route path="/makeup-tools" component={CategoryPage} />
+          <Route path="/fragance" component={CategoryPage} />
+          <Route path="/lookbook" component={LookBook} />
           <Route path="/checkout" component={Checkout} />
           <Route
             path="/register"
             render={() => (currentUser ? <Redirect to="/" /> : <Register />)}
           />
-          <Route path="/cart" render={() => <CartPage />} />
-          <Route path="/wishlist" render={() => <WishListPage />} />
+          <Route path="/cart" component={CartPage} />
           <Route
             path="/products/:product"
             render={(otherProps) => <ProductView {...otherProps} products={products} />}
           />
+          <Route render={() => <h1>404 PAGE</h1>} />
         </Switch>
 
         <AppFooter />
         <FixedScrollNav />
         <GoToTopBtn />
+        <PopupProduct />
       </div>
     );
   }

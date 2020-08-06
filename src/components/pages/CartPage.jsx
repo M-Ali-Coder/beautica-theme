@@ -26,7 +26,7 @@ class CartPage extends React.Component {
               <div className="cart-page-content">
                 <h3>
                   your cart{" "}
-                  <span className="items-count-in-shopping-cart">({cartItems.length} items)</span>
+                  <span className="items-count-in-shopping-cart">({cartItemsQty} items)</span>
                 </h3>
               </div>
 
