@@ -225,7 +225,7 @@
   }
 }
 
-@media screen and(max-width: 1024px) {
+@media screen and(max-width: $breakpoint-xl) {
   .shop-page-wrapper {
     width: 95% !important;
   }

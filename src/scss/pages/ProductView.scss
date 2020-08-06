@@ -105,10 +105,6 @@
       grid-auto-rows: 500px;
 
       .product-image-thumbnail-preview {
-        img {
-          width: 100%;
-        }
-
         .image-gallery-thumbnails-container {
           margin-top: 10px;
           display: grid !important;
@@ -123,6 +119,43 @@
         .image-gallery-thumbnail:hover,
         .image-gallery-thumbnail:focus {
           border: 2px solid #bdbdbdfa;
+        }
+      }
+    }
+
+    .tabs-wrapper {
+      margin-top: 30px;
+
+      .tab-switcher-wrapper {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ebebeb;
+
+        .tab-switcher-item {
+          padding: 10px;
+          border: 1px solid #ebebeb;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        .active-tab {
+          border: none;
+          border-top: 2px solid #000;
+        }
+      }
+
+      .tab-content-wrapper {
+        padding-top: 20px;
+
+        .tab-content-item {
+          font-size: 14px;
+
+          p {
+            margin-top: 10px;
+            font-size: 12px;
+          }
         }
       }
     }
@@ -202,6 +235,7 @@
 
       .product-actions {
         display: flex;
+        flex-wrap: wrap;
         text-transform: uppercase;
         margin-top: 50px;
 
@@ -210,6 +244,8 @@
           font-weight: bold;
           cursor: pointer;
           margin-right: 30px;
+          display: flex;
+          align-items: center;
         }
 
         .add-to-wishlist {
@@ -225,6 +261,39 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and(max-width: $breakpoint-lg) {
+  .product-view-page-wrapper {
+    .product-view-page-content {
+      grid-template-columns: 1fr !important;
+    }
+    .left-side-wrapper {
+      display: none;
+    }
+    .product-view-right-side {
+      grid-template-columns: 1fr !important;
+    }
+    .image-gallery-thumbnails-wrapper {
+      display: none !important;
+    }
+
+    .product-view-right-side {
+      display: block !important;
+    }
+
+    .image-gallery-content {
+      margin-bottom: 30px;
+
+      img {
+        border: 1px solid #969696;
+        max-width: 200px;
+      }
+    }
+    .add-to-wishlist {
+      margin-top: 20px;
     }
   }
 }

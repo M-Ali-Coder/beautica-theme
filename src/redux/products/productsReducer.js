@@ -6,11 +6,10 @@ import item5 from "../../assets/images/products/product-5.jpg";
 import item6 from "../../assets/images/products/product-6.webp";
 import item7 from "../../assets/images/products/product-7.jpg";
 import item8 from "../../assets/images/products/product-8.webp";
-import item10 from "../../assets/images/products/product-10.jpg";
-import item11 from "../../assets/images/products/product-11.webp";
-import item12 from "../../assets/images/products/product-12.webp";
-import item14 from "../../assets/images/products/product-14.jpg";
-import item15 from "../../assets/images/products/product-15.webp";
+import item9 from "../../assets/images/products/product-10.jpg";
+import item10 from "../../assets/images/products/product-11.webp";
+import item11 from "../../assets/images/products/product-12.webp";
+import item12 from "../../assets/images/products/product-15.webp";
 
 const INITIAL_STATE = [
   {
@@ -20,43 +19,48 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 320 + ".00",
     isNew: true,
-    routerLink: "product-10",
+    routerLink: "product-1",
+    subImages: [item5, item11],
   },
   {
     id: 2,
-    img: item14,
+    img: item7,
     productName: "[Sample] Coco Lee, wedges with sweet chilli sauce0",
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 120 + ".00",
     isNew: false,
-    routerLink: "product-10",
+    routerLink: "product-2",
+    subImages: [item12, item10],
   },
   {
     id: 3,
-    img: item15,
+    img: item11,
     productName: "[Sample] Coco Lee, wedges with sweet chilli sauce0",
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 250 + ".00",
     isNew: true,
-    routerLink: "product-10",
+    routerLink: "product-3",
+    subImages: [item11, item10],
   },
   {
     id: 4,
-    img: item11,
+    img: item9,
     productName: "[Sample] Coco Lee, wedges with sweet chilli sauce",
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 120 + ".00",
     isNew: false,
-    routerLink: "product-9",
+    routerLink: "product-4",
+    subImages: [item8, item7],
   },
   {
     id: 5,
-    img: item5,
+    img: item10,
     productName: "[Sample] Coco Lee, wedges with sweet chilli sauce",
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 220 + ".00",
     isNew: true,
     routerLink: "product-5",
+    subImages: [item6, item5],
   },
   {
     id: 6,
@@ -66,6 +70,7 @@ const INITIAL_STATE = [
     price: 120 + ".00",
     isNew: true,
     routerLink: "product-6",
+    subImages: [item4, item3],
   },
   {
     id: 7,
@@ -75,6 +80,7 @@ const INITIAL_STATE = [
     price: 180 + ".00",
     isNew: false,
     routerLink: "product-7",
+    subImages: [item2, item1],
   },
   {
     id: 8,
@@ -84,6 +90,7 @@ const INITIAL_STATE = [
     price: 100 + ".00",
     isNew: true,
     routerLink: "product-8",
+    subImages: [item12, item11],
   },
   {
     id: 9,
@@ -92,7 +99,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 99 + ".00",
     isNew: false,
-    routerLink: "product-4",
+    routerLink: "product-9",
+    subImages: [item10, item9],
   },
   {
     id: 10,
@@ -102,6 +110,7 @@ const INITIAL_STATE = [
     price: 320 + ".00",
     isNew: true,
     routerLink: "product-10",
+    subImages: [item7, item8],
   },
   {
     id: 11,
@@ -110,7 +119,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 320 + ".00",
     isNew: true,
-    routerLink: "product-10",
+    routerLink: "product-11",
+    subImages: [item6, item5],
   },
   {
     id: 12,
@@ -119,7 +129,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 320 + ".00",
     isNew: false,
-    routerLink: "product-10",
+    routerLink: "product-12",
+    subImages: [item4, item3],
   },
   {
     id: 13,
@@ -128,7 +139,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 100 + ".00",
     isNew: true,
-    routerLink: "product-1",
+    routerLink: "product-13",
+    subImages: [item4, item3],
   },
   {
     id: 14,
@@ -137,7 +149,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 140 + ".00",
     isNew: true,
-    routerLink: "product-2",
+    routerLink: "product-14",
+    subImages: [item2, item1],
   },
   {
     id: 15,
@@ -146,7 +159,8 @@ const INITIAL_STATE = [
     description: "Magnis de darturien eros laciniados de cosmopolis dinterdum",
     price: 200 + ".00",
     isNew: true,
-    routerLink: "product-3",
+    routerLink: "product-15",
+    subImages: [item7, item2],
   },
 ];
 
