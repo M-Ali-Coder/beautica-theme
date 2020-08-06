@@ -6,13 +6,14 @@ import { addItem } from "../redux/cart/cart.actions";
 import { connect } from "react-redux";
 class SingleProduct extends React.Component {
   render() {
-    const { item, addItem } = this.props;
+    const { item, view, addItem } = this.props;
     const { img, productName, price, description, isNew, routerLink } = item;
+    console.log(view);
 
     return (
       <>
-        <div className="single-product-wrapper show-one-row-view   font">
-          <div className="content">
+        <div className="single-product-wrapper">
+          <div className={view === "row" ? "one-column-content" : "multi-columns-content"}>
             <div className="img-wrapper">
               <img src={img} alt="" id="singleProductImg" />
               {isNew && <div className="new-offer">new</div>}
