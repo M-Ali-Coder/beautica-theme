@@ -4,8 +4,25 @@ import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { addItem } from "../redux/cart/cart.actions";
 import { connect } from "react-redux";
+import ProductModal from "./ProductModal";
 class SingleProduct extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Binding
+    this.closeModal = this.closeModal.bind(this);
+
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  closeModal() {
+    this.setState({ showModal: false });
+  }
+
   render() {
+    const { showModal } = this.state;
     const { item, view, addItem } = this.props;
     const { img, productName, price, description, isNew, routerLink } = item;
 
@@ -19,7 +36,9 @@ class SingleProduct extends React.Component {
             <div className="add-to-wish-list">
               <FaHeart />
             </div>
-            <div className="quick-view">Quick View</div>
+            <div className="quick-view" onClick={() => this.setState({ showModal: true })}>
+              Quick View
+            </div>
           </div>
 
           <div className="product-details">
@@ -43,6 +62,7 @@ class SingleProduct extends React.Component {
             </div>
           </div>
         </div>
+        {showModal && <ProductModal item={item} closeModal={this.closeModal} />}
       </div>
     );
   }

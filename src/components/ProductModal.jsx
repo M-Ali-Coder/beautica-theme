@@ -1,56 +1,48 @@
 import React from "react";
-import Img from "../assets/images/products/product-1.webp";
-import { FaRegStar, FaRegStarHalf } from "react-icons/fa";
+import { MdStar, MdStarHalf } from "react-icons/md";
 
-const ProductModal = () => {
+const ProductModal = ({ item, closeModal }) => {
+  const { img, productName, price, description } = item;
+
   return (
     <div id="product-modal-wrapper">
       <div className="product-modal-content">
         <div className="row">
           <div className="col-lg-6">
             <div className="product-img-wrapper">
-              <img src={Img} alt="" />
+              <img src={img} alt="" />
             </div>
           </div>
           <div className="col-lg-6">
             <div className="product-details">
-              <h3>Product title here</h3>
+              <h3>{productName}</h3>
 
               <div className="product-price">
-                <span className="old-price">$60.00</span>
                 <span className="new-price">
-                  <b>$39.00</b>
+                  <b>{price}</b>
                 </span>
               </div>
 
               <div className="product-rating">
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStarHalf />
+                <MdStar />
+                <MdStar />
+                <MdStar />
+                <MdStar />
+                <MdStarHalf />
               </div>
 
-              <p className="product-description">
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-                minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
-                dolor repellendus.
-              </p>
+              <p className="product-description">{description}</p>
 
-              <div className="product-quantity">
-                <button>-</button>
-                <span className="quantity font-size-14">1</span>
-                <button>+</button>
+              <div id="addToCart">
+                <button>add to cart</button>
               </div>
-
-              <form id="addToCart">
-                <button type="submit">add to cart</button>
-              </form>
             </div>
           </div>
         </div>
 
-        <span id="closeModal">X</span>
+        <span id="closeModal" onClick={() => closeModal()}>
+          X
+        </span>
       </div>
     </div>
   );

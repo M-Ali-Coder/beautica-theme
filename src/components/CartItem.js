@@ -7,9 +7,7 @@ const CartItem = ({ item, removeItemFromCart, addItem, removeItem }) => {
   const { img, productName, quantity, price } = item;
 
   const decressCartItem = () => {
-    if (item.quantity <= 1) {
-      removeItemFromCart(item);
-    }
+    if (item.quantity <= 1) removeItemFromCart(item);
     removeItem(item);
   };
   return (
