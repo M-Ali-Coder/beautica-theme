@@ -60,6 +60,25 @@ export const addProductsAndDocument = async (collectionKey, objectToAdd) => {
 
   return batch.commit();
 };
+
+export const collectionSnapshot = async (collection) => {
+  const collectionItem = collection.docs.map((doc) => {
+    const { img, price, description, productName, isNew, subImages } = doc.data();
+
+    return {
+      id: doc.id,
+      img,
+      price,
+      description,
+      productName,
+      isNew,
+      subImages,
+    };
+  });
+
+  console.log(collectionItem);
+};
+
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 
