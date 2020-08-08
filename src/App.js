@@ -15,23 +15,18 @@ import ProductView from "./components/pages/ProductView";
 import GoToTopBtn from "./components/GoToTopBtn";
 import Checkout from "./components/pages/Checkout";
 
-import {
-  auth,
-  createUserProfileDocument,
-  addCollectionAndDocument,
-} from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
-import { selectSectionsProducts } from "./redux/products/products.selectors";
 import PopupProduct from "./components/PopupProduct";
 
 class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser, products } = this.props;
+    const { setCurrentUser } = this.props;
 
     // Track user login state
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -49,7 +44,6 @@ class App extends Component {
         });
       } else {
         setCurrentUser(userAuth);
-        addCollectionAndDocument("products", products);
       }
     });
   }
@@ -102,7 +96,6 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  products: selectSectionsProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({
