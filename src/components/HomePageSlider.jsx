@@ -4,24 +4,8 @@ import "swiper/css/swiper.css";
 import Slide1 from "../assets/images/home-slide-1.jpg";
 import Slide2 from "../assets/images/home-slide-2.jpg";
 import { Link } from "react-router-dom";
-import { TweenMax } from "gsap";
 
 class HomePageSlider extends React.Component {
-  constructor(props) {
-    super(props);
-
-    // react-gsap selectors
-    this.Slider1Content = null;
-    this.Slider2Content = null;
-    this.myTween = null;
-  }
-
-  componentDidMount() {
-    // Animate selectors with gsap
-    this.myTween = TweenMax.from(this.Slider1Content, 1, { x: -300, opactity: 0, delay: 0.4 });
-    this.myTween = TweenMax.from(this.Slider2Content, 1, { x: 300, opactity: 0, delay: 0.6 });
-  }
-
   render() {
     const params = {
       navigation: {
@@ -40,7 +24,7 @@ class HomePageSlider extends React.Component {
           {/* Hide content from 992px to 0  */}
           <div className="slider-item carousel">
             <img src={Slide1} alt="slide-1" />
-            <div className="carousel-content" ref={(div) => (this.Slider1Content = div)}>
+            <div className="carousel-content">
               <h1>
                 Beautifully Bare <br /> Collection
               </h1>
@@ -54,7 +38,7 @@ class HomePageSlider extends React.Component {
 
             {/* Show content from 0 to 991px  */}
 
-            <div className="mobile-carousel-content" ref={(div) => (this.Slider2Content = div)}>
+            <div className="mobile-carousel-content">
               <h1>Beautifully Bare Collection</h1>
               <div className="carousel-description">
                 <p>It’s the Lightweight, Natural-Looking Collection You Love</p>

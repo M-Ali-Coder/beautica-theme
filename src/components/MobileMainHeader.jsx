@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import AppLogo from "../assets/images/logo.webp";
 import ShoppingBag from "../assets/svg/shopping-bag.svg";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectCartItems, selectCartItemsCount } from "../redux/cart/cart.selectors";
 import CartDropDownMenu from "./CartDropDownMenu";
 
 class MobileMainHeader extends React.Component {
@@ -115,9 +112,4 @@ class MobileMainHeader extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems,
-  cartItemsCount: selectCartItemsCount,
-});
-
-export default connect(mapStateToProps)(MobileMainHeader);
+export default MobileMainHeader;

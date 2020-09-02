@@ -2,64 +2,46 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import PayPalCheckout from "../assets/images/checkout-logo-small.png";
-import { connect } from "react-redux";
+import img from "../assets/images/products/product-12.webp";
 
-const CartDropDownMenu = ({ toggleProductCart, cartItems }) => {
+const CartDropDownMenu = ({ toggleProductCart }) => {
   return (
     <>
       {toggleProductCart && (
         <div className="product-in-your-cart">
-          {!cartItems.length ? (
-            <div className="empty-cart-msg" style={{ textAlign: "center" }}>
-              <b>No items in your cart</b>
+          <div className="cart-product-details">
+            <div className="product-img">
+              <img src={img} id="product-example-img" alt="cart-product" />
             </div>
-          ) : (
-            cartItems
-              .filter((item, idx) => idx < 2)
-              .map(({ img, productName, price, quantity }, idx) => (
-                <div className="cart-product-details" key={idx}>
-                  <div className="product-img">
-                    <img src={img} id="product-example-img" alt="cart-product" />
-                  </div>
 
-                  <div className="product-details">
-                    <div className="product-name">coco lee</div>
-                    <Link to="#" className="product-category">
-                      {productName}
-                    </Link>
-                    <div className="product-qty">
-                      <span>{quantity} X</span>
-                      <span className="product-price"> {price}</span>
-                    </div>
-                  </div>
-                </div>
-              ))
-          )}
-
-          {cartItems.length ? (
-            <>
-              <Link to="/cart" id="view-your-cart">
-                view cart
+            <div className="product-details">
+              <div className="product-name">coco lee</div>
+              <Link to="#" className="product-category">
+                productName
               </Link>
+              <div className="product-qty">
+                <span>1 X</span>
+                <span className="product-price"> 100</span>
+              </div>
+            </div>
+          </div>
 
-              <Link to="/checkout" id="checkout-now">
-                check out now
-              </Link>
+          <Link to="/cart" id="view-your-cart">
+            view cart
+          </Link>
 
-              <span className="or-use">-- or use --</span>
-              <Link to="#" className="checkout-with-paypal">
-                <img src={PayPalCheckout} alt="paypal-chckout" />
-              </Link>
-            </>
-          ) : null}
+          <Link to="/checkout" id="checkout-now">
+            check out now
+          </Link>
+
+          <span className="or-use">-- or use --</span>
+          <Link to="#" className="checkout-with-paypal">
+            <img src={PayPalCheckout} alt="paypal-chckout" />
+          </Link>
         </div>
       )}
     </>
   );
 };
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems,
-});
-
-export default connect(mapStateToProps)(CartDropDownMenu);
+export default CartDropDownMenu;

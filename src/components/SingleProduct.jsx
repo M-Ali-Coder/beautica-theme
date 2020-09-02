@@ -1,9 +1,10 @@
 import React from "react";
+
 import { MdStar, MdStarHalf } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { addItem } from "../redux/cart/cart.actions";
-import { connect } from "react-redux";
+
+import Img from "../assets/images/products/product-3.webp";
 import ProductModal from "./ProductModal";
 class SingleProduct extends React.Component {
   constructor(props) {
@@ -22,16 +23,15 @@ class SingleProduct extends React.Component {
   }
 
   render() {
+    const { view } = this.props;
     const { showModal } = this.state;
-    const { item, view, addItem } = this.props;
-    const { img, productName, price, description, isNew, routerLink } = item;
 
     return (
       <div className="single-product-wrapper">
         <div className={view === "row" ? "one-column-content" : "multi-columns-content"}>
           <div className="img-wrapper">
-            <img src={img} alt="" id="singleProductImg" />
-            {isNew && <div className="new-offer">new</div>}
+            <img src={Img} alt="" id="singleProductImg" />
+            <div className="new-offer">new</div>
 
             <div className="add-to-wish-list">
               <FaHeart />
@@ -42,14 +42,14 @@ class SingleProduct extends React.Component {
           </div>
 
           <div className="product-details">
-            <Link to={`/products/${routerLink}`} className="brandName">
-              {productName}
+            <Link to={`/products/product`} className="brandName">
+              productName
             </Link>
             <span className="product-price">
-              <b>${price}</b>
+              <b>$100.00</b>
             </span>
 
-            <p className="product-description">{description}</p>
+            <p className="product-description">description</p>
             <div className="product-rating">
               <MdStar />
               <MdStar />
@@ -58,18 +58,13 @@ class SingleProduct extends React.Component {
               <MdStarHalf />
             </div>
             <div className="add-to-cart">
-              <button onClick={() => addItem(item)}>add to cart</button>
+              <button>add to cart</button>
             </div>
           </div>
         </div>
-        {showModal && <ProductModal item={item} closeModal={this.closeModal} />}
+        {showModal && <ProductModal closeModal={this.closeModal} />}
       </div>
     );
   }
 }
-
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
-});
-
-export default connect(null, mapDispatchToProps)(SingleProduct);
+export default SingleProduct;

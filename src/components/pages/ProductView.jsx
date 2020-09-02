@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { MdStar } from "react-icons/md";
-import ImageGallery from "react-image-gallery";
+// import ImageGallery from "react-image-gallery";
 
 class Product extends React.Component {
   constructor(props) {
@@ -15,30 +15,21 @@ class Product extends React.Component {
 
   render() {
     const { activeTab } = this.state;
-    const { products } = this.props;
-    const { params } = this.props.match;
-    const subImage = products.map((item) => item.subImages);
 
-    const matchProduct = products
-      .filter((product) => product.routerLink === params.product)
-      .map((product) => product);
-
-    const { img, productName, description, price } = matchProduct[0];
-
-    const images = [
-      {
-        original: `${img}`,
-        thumbnail: `${img}`,
-      },
-      {
-        original: `${subImage[0][0]}`,
-        thumbnail: `${subImage[0][0]}`,
-      },
-      {
-        original: `${subImage[0][1]}`,
-        thumbnail: `${subImage[0][1]}`,
-      },
-    ];
+    // const images = [
+    //   {
+    //     original: `${img}`,
+    //     thumbnail: `${img}`,
+    //   },
+    //   {
+    //     original: `${subImage[0][0]}`,
+    //     thumbnail: `${subImage[0][0]}`,
+    //   },
+    //   {
+    //     original: `${subImage[0][1]}`,
+    //     thumbnail: `${subImage[0][1]}`,
+    //   },
+    // ];
     return (
       <div className="container product-view-page-wrapper">
         <div className="product-view-page-content">
@@ -111,19 +102,19 @@ class Product extends React.Component {
           <div>
             <div className="product-view-right-side">
               <div className="product-image-thumbnail-preview">
-                <ImageGallery
+                {/* <ImageGallery
                   items={images}
                   showNav={false}
                   showFullscreenButton={false}
                   showPlayButton={false}
                   autoPlay
                   slideInterval={4000}
-                />
+                /> */}
               </div>
 
               <div className="about-product-details">
-                <h3>{productName}</h3>
-                <p className="descritpion">{description}</p>
+                <h3>productName</h3>
+                <p className="descritpion">description</p>
 
                 <div className="product-rating">
                   <MdStar />
@@ -136,8 +127,8 @@ class Product extends React.Component {
                 </div>
 
                 <div className="product-price">
-                  <p className="old-price">${price + 100}</p>
-                  <span className="new-price">${price}</span>
+                  <p className="old-price">100</p>
+                  <span className="new-price">50</span>
                 </div>
 
                 <ul className="about-shipping font">

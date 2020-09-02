@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import CategoryBanner from "../../assets/images/category-banner.webp";
 import { FaList, FaTh } from "react-icons/fa";
 import SingleProduct from "../SingleProduct";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectSectionsProducts } from "../../redux/products/products.selectors";
 
 class ShopPage extends React.Component {
   constructor(props) {
@@ -17,7 +14,6 @@ class ShopPage extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
     const { view } = this.state;
 
     return (
@@ -158,11 +154,12 @@ class ShopPage extends React.Component {
               <div
                 className={view === "grid" ? "category-page-products-content" : "one-grid-column"}
               >
-                {products
-                  .filter((item, idx) => idx < 8)
-                  .map((item) => (
-                    <SingleProduct key={item.id} item={item} view={view} />
-                  ))}
+                <SingleProduct view={view} />
+                <SingleProduct view={view} />
+                <SingleProduct view={view} />
+                <SingleProduct view={view} />
+                <SingleProduct view={view} />
+                <SingleProduct view={view} />
               </div>
             </div>
           </div>
@@ -172,8 +169,4 @@ class ShopPage extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  products: selectSectionsProducts,
-});
-
-export default connect(mapStateToProps)(ShopPage);
+export default ShopPage;

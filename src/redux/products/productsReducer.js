@@ -1,3 +1,5 @@
+import productsTypes from "./products.types";
+
 import item1 from "../../assets/images/products/product-1.webp";
 import item2 from "../../assets/images/products/product-2.webp";
 import item3 from "../../assets/images/products/product-3.webp";
@@ -166,6 +168,11 @@ const INITIAL_STATE = [
 
 const productsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case productsTypes.UPDATED_PRODUCTS:
+      return {
+        ...state,
+        productsCollection: action.payload,
+      };
     default:
       return state;
   }

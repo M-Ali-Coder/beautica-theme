@@ -2,22 +2,17 @@ import React from "react";
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 import SingleProduct from "./SingleProduct";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectSectionsProducts } from "../redux/products/products.selectors.js";
-
-import { firestore, collectionSnapshot } from "../firebase/firebase.utils";
-
 class ProductsSection extends React.Component {
-  componentDidMount() {
-    const productsCollectionRef = firestore.collection("products");
-    productsCollectionRef.onSnapshot((snapshot) => {
-      collectionSnapshot(snapshot);
-    });
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      productsCollection: [],
+    };
   }
 
   render() {
-    const { sectionTitle, sectionDesc, autoPlay, sections } = this.props;
+    const { sectionTitle, sectionDesc, autoPlay } = this.props;
 
     // Swiper
     const params = {
@@ -64,11 +59,9 @@ class ProductsSection extends React.Component {
 
           <div className="just-arrived-products-slider">
             <Swiper {...params}>
-              {sections.map((item) => (
-                <div className="swiper-slider-item" key={item.id}>
-                  <SingleProduct item={item} />
-                </div>
-              ))}
+              <div className="swiper-slider-item">
+                <SingleProduct />
+              </div>
             </Swiper>
           </div>
         </div>
@@ -77,8 +70,4 @@ class ProductsSection extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  sections: selectSectionsProducts,
-});
-
-export default connect(mapStateToProps)(ProductsSection);
+export default ProductsSection;

@@ -4,11 +4,6 @@ import { FaHeart } from "react-icons/fa";
 import ShoppingBag from "../assets/svg/shopping-bag.svg";
 import { Link } from "react-router-dom";
 import MobileMainHeader from "./MobileMainHeader";
-import { auth } from "../firebase/firebase.utils";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { selectCartItemsCount } from "../redux/cart/cart.selectors";
-import { selectCurrentUser } from "../redux/user/user.selectors";
 import CartDropDownMenu from "./CartDropDownMenu";
 
 class MainHeader extends React.Component {
@@ -23,7 +18,6 @@ class MainHeader extends React.Component {
 
   render() {
     const { toggleProductCart } = this.state;
-    const { currentUser, cartItemsCount } = this.props;
 
     return (
       <>
@@ -46,15 +40,9 @@ class MainHeader extends React.Component {
               <div className="user-actions">
                 <div className="hi-customer">
                   <div>Hi Customer</div>
-                  {currentUser ? (
-                    <span onClick={() => auth.signOut()}>
-                      <b>Logout</b>
-                    </span>
-                  ) : (
-                    <Link to="/register">
-                      <b>Login</b>
-                    </Link>
-                  )}
+                  <Link to="/register">
+                    <b>Login</b>
+                  </Link>
                   <span className="or-sperator">or</span>
                   <Link to="/register" className="font-bold">
                     Register
@@ -72,7 +60,7 @@ class MainHeader extends React.Component {
                     onClick={() => this.setState({ toggleProductCart: !toggleProductCart })}
                   >
                     <img src={ShoppingBag} id="header-shopping-cart" alt="" />
-                    <span className="cart-products">{cartItemsCount}</span>
+                    <span className="cart-products">0</span>
 
                     <CartDropDownMenu toggleProductCart={toggleProductCart} />
                   </div>
@@ -89,9 +77,4 @@ class MainHeader extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  cartItemsCount: selectCartItemsCount,
-});
-
-export default connect(mapStateToProps)(MainHeader);
+export default MainHeader;

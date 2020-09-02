@@ -1,5 +1,4 @@
 import React from "react";
-import { signinWithGoogle, auth } from "../firebase/firebase.utils";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -13,17 +12,6 @@ class Signin extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({
-        email: "",
-        password: "",
-      });
-    } catch (error) {
-      console.log(error.msg);
-    }
   };
 
   handleChange = (e) => {
@@ -67,7 +55,7 @@ class Signin extends React.Component {
 
           <div className="btn-group">
             <button>sign in</button>
-            <button onClick={signinWithGoogle}>sign in with Google</button>
+            <button>sign in with Google</button>
           </div>
         </form>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import Signin from "../Signin";
 
 class Register extends React.Component {
@@ -13,32 +12,6 @@ class Register extends React.Component {
       confirmPassword: "",
     };
   }
-
-  handleSubmit = async (e) => {
-    e.preventDefault();
-    const { displayName, email, password, confirmPassword } = this.state;
-
-    // check if password === confirmPassword
-    if (password !== confirmPassword) {
-      alert("Password don't match");
-      return;
-    }
-
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      createUserProfileDocument(user, { displayName });
-
-      // Clear fields
-      this.setState({
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.log(error.msg);
-    }
-  };
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +29,7 @@ class Register extends React.Component {
         <div className="content-wrapper">
           <div className="row">
             <h3 className="mr-bottom-20">Create Account</h3>
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <div className="input-group">
                 <label htmlFor="displayName">Display Name</label>
                 <input
